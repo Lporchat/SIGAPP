@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leite/telas/homeScream.dart';
 import 'telas/loginScream.dart';
 
 void main() {
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: loginScream(),
+      //home: loginScreem(),
+      home: HomeScream(),
     );
   }
 }

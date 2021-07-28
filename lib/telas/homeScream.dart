@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:dropdown_search/dropdown_search.dart';
+import 'package:leite/shered/theme/app_colors.dart';
+import 'package:leite/telas/reciveScream.dart';
 
 class HomeScream extends StatefulWidget {
   const HomeScream({Key? key}) : super(key: key);
@@ -13,8 +16,8 @@ class _HomeScreamState extends State<HomeScream> {
     return Scaffold(
       appBar: AppBar(
         title: Text("SIGAPP"),
-        backgroundColor: Color.fromARGB(255, 89, 117, 181),
         centerTitle: true,
+        backgroundColor: AppColors.primary,
       ),
       body: SafeArea(
           child: Column(
@@ -22,161 +25,276 @@ class _HomeScreamState extends State<HomeScream> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Expanded(
-              child: Padding(
-            padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
-            child: GridView(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-                childAspectRatio: 1,
+          Flexible(
+            flex: 1,
+            child: Container(
+              child: ListView(
+                padding:
+                    EdgeInsets.only(bottom: 4, top: 4, left: 16, right: 16),
+                children: [
+                  Container(height: 8),
+                  DropdownSearch<String>(
+                    mode: Mode.MENU,
+                    showSelectedItem: true,
+                    items: [
+                      "Brazil",
+                      "Tunisia",
+                      'Canada',
+                      "Leonardo",
+                      "vamos la"
+                    ],
+                    label: "Municipio",
+                    showClearButton: true,
+                    onChanged: (data) => print(data),
+                  ),
+                  Container(
+                    height: 10,
+                  ),
+                  DropdownSearch<String>(
+                    // validator: (v) => v == null ? "required field" : null,
+                    hint: "Select a country",
+                    mode: Mode.MENU,
+                    showSelectedItem: true,
+                    items: [
+                      "Brazil",
+                      "Tunisia",
+                      'Canada',
+                      "Leonardo",
+                      "vamos la"
+                    ],
+                    label: "Posto",
+                    showClearButton: true,
+                    onChanged: (data) => print(data),
+                    // popupItemDisabled: (String? s) =>
+                    //     s?.startsWith('I') ?? false,
+                    // clearButtonSplashRadius: 10,
+                    //selectedItem: "Tunisia",
+                    // onBeforeChange: (a, b) {
+                    //   if (b == null) {
+                    //     AlertDialog alert = AlertDialog(
+                    //       title: Text("Are you sure..."),
+                    //       content: Text("...you want to clear the selection"),
+                    //       actions: [
+                    //         TextButton(
+                    //           child: Text("OK"),
+                    //           onPressed: () {
+                    //             Navigator.of(context).pop(true);
+                    //           },
+                    //         ),
+                    //         TextButton(
+                    //           child: Text("NOT OK"),
+                    //           onPressed: () {
+                    //             Navigator.of(context).pop(false);
+                    //           },
+                    //         ),
+                    //       ],
+                    //     );
+
+                    //     return showDialog<bool>(
+                    //         context: context,
+                    //         builder: (BuildContext context) {
+                    //           return alert;
+                    //         });
+                    //   }
+
+                    //   return Future.value(true);
+                    // },
+                  )
+                ],
               ),
-              scrollDirection: Axis.vertical,
-              children: [
-                Card(
-                  elevation: 5,
-                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                  color: Color.fromARGB(255, 89, 117, 181),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
-                        child: Icon(
-                          Icons.qr_code_rounded,
-                          color: Colors.white,
-                          size: 100,
-                        ),
-                      ),
-                      Text(
-                        'Ler QRCode',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ],
-                  ),
-                ),
-                Card(
-                  elevation: 5,
-                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                  color: Color.fromARGB(255, 89, 117, 181),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
-                        child: Icon(
-                          Icons.qr_code_rounded,
-                          color: Colors.white,
-                          size: 100,
-                        ),
-                      ),
-                      Text(
-                        'Ler QRCode',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ],
-                  ),
-                ),
-                Card(
-                  elevation: 5,
-                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                  color: Color.fromARGB(255, 89, 117, 181),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
-                        child: Icon(
-                          Icons.qr_code_rounded,
-                          color: Colors.white,
-                          size: 100,
-                        ),
-                      ),
-                      Text(
-                        'Ler QRCode',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ],
-                  ),
-                ),
-                Card(
-                  elevation: 5,
-                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                  color: Color.fromARGB(255, 89, 117, 181),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
-                        child: Icon(
-                          Icons.qr_code_rounded,
-                          color: Colors.white,
-                          size: 100,
-                        ),
-                      ),
-                      Text(
-                        'Ler QRCode',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ],
-                  ),
-                ),
-                Card(
-                  elevation: 5,
-                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                  color: Color.fromARGB(255, 89, 117, 181),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
-                        child: Icon(
-                          Icons.qr_code_rounded,
-                          color: Colors.white,
-                          size: 100,
-                        ),
-                      ),
-                      Text(
-                        'Ler QRCode',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ],
-                  ),
-                ),
-                Card(
-                  elevation: 5,
-                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                  color: Color.fromARGB(255, 89, 117, 181),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
-                        child: Icon(
-                          Icons.qr_code_rounded,
-                          color: Colors.white,
-                          size: 100,
-                        ),
-                      ),
-                      Text(
-                        'Ler QRCode',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
             ),
-          ))
+          ),
+          Flexible(
+            flex: 3,
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+              child: GridView(
+                physics: NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 0,
+                  mainAxisSpacing: 0,
+                  childAspectRatio: 1,
+                ),
+                scrollDirection: Axis.vertical,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      print("testando 2");
+                      _showLeite(context);
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Card(
+                        color: AppColors.primary,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.qr_code_rounded,
+                              color: Colors.white,
+                              size: 100,
+                            ),
+                            Text(
+                              'Ler QRCode',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      print("testando 1");
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Card(
+                        color: AppColors.primary,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.sync,
+                              color: Colors.white,
+                              size: 100,
+                            ),
+                            Text(
+                              'Sincronizar',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      print("va para outra tela");
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ReciveScreen()));
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Card(
+                        color: AppColors.primary,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.car_rental,
+                              color: Colors.white,
+                              size: 100,
+                            ),
+                            Text(
+                              'Receber',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          )
         ],
       )),
     );
   }
+}
+
+void _showLeite(
+  context,
+) {
+  // showModalBottomSheet(
+  //     context: context,
+  //     builder: (context) {
+  //       return BottomSheet(
+  //           onClosing: () {},
+  //           builder: (context) {
+  //             return Container(
+  //                 padding: EdgeInsets.all(10),
+  //                 child:
+  //                     Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+  //                   Padding(
+  //                       padding: EdgeInsets.all(20),
+  //                       child: Text(
+  //                         "Quantidade de litros",
+  //                         style: TextStyle(
+  //                             fontSize: 25.0, fontWeight: FontWeight.bold),
+  //                       )),
+  //                   Padding(
+  //                       padding: EdgeInsets.all(20),
+  //                       child: TextField(
+  //                         obscureText: true,
+  //                         decoration: InputDecoration(
+  //                           border: OutlineInputBorder(),
+  //                           labelText: 'Password',
+  //                         ),
+  //                       )),
+  //                   Padding(
+  //                       padding: EdgeInsets.only(
+  //                           top: 10, bottom: 10, left: 16, right: 16),
+  //                       child: TextButton(
+  //                         child: Text(
+  //                           "deletar",
+  //                           style: TextStyle(color: Colors.red, fontSize: 20.0),
+  //                         ),
+  //                         onPressed: () {
+  //                           Navigator.of(context).pop();
+  //                         },
+  //                       )),
+  //                 ]));
+  //           });
+  //     });
+
+  showDialog<String>(
+    context: context,
+    builder: (BuildContext context) => AlertDialog(
+      title: Text('Digite a quantidade de leite'),
+      content: Container(
+        height: 120,
+        child: Column(
+          children: [
+            SizedBox(
+              height: 45,
+              child: TextField(
+                keyboardType: TextInputType.number,
+                textAlign: TextAlign.center,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: SizedBox(
+                height: 50,
+                width: double.infinity,
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: AppColors.primary,
+                    ),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: Text("Finalizar")),
+              ),
+            )
+          ],
+        ),
+      ),
+    ),
+  );
 }
