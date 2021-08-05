@@ -23,55 +23,11 @@ class _ReciveScreenState extends State<ReciveScreen> {
             padding: EdgeInsets.only(bottom: 4, top: 25, left: 16, right: 16),
             child: Column(
               children: [
-                Text(
-                  "Leite PLP",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-                ),
                 Padding(
                   padding: EdgeInsets.only(top: 10),
                 ),
-                Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(top: 5),
-                      ),
-                      TextField(
-                        keyboardType: TextInputType.number,
-                        textAlign: TextAlign.center,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: 'Bovino',
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(top: 5),
-                      ),
-                      TextField(
-                        keyboardType: TextInputType.number,
-                        textAlign: TextAlign.center,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: 'Caprino',
-                          alignLabelWithHint: true,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 20),
-                ),
                 Text(
-                  "Leite PAA",
+                  "Informe a quantidade de leite entregue ao laticínios",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                 ),
                 Padding(

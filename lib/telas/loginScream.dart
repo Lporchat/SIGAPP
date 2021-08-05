@@ -71,7 +71,7 @@ class _loginScreemState extends State<loginScreem> {
                         style: TextStyle(color: AppColors.white),
                         decoration: InputDecoration(
                             fillColor: Colors.black,
-                            hintText: "Matricula",
+                            hintText: "Login",
                             hintStyle: TextStyle(color: AppColors.white),
                             prefixIcon: Icon(
                               Icons.person,
